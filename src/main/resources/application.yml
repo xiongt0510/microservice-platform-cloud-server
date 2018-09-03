@@ -1,0 +1,13 @@
+server:
+  port: 9000
+
+
+eureka:
+  instance:
+    hostname: localhost  #eureka 服务端的实例名称
+  client:
+    register-with-eureka: false  #false 表示不向自己注册自己
+    fetch-registry: false #注册中心不需要检索服务
+    #设置与Eureka Server交互的地址查询服务和注册服务
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
